@@ -3,17 +3,14 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "yt-dlp"
+name = "tyt-dlp"
 authors = [
-    {name = "pukkandan", email = "pukkandan.ytdlp@gmail.com"},
+    {name = "matczx", email = "245040149+matcxz@users.noreply.github.com"},
 ]
 maintainers = [
-    {email = "maintainers@yt-dlp.org"},
-    {name = "Grub4K", email = "contact@grub4k.dev"},
-    {name = "bashonly", email = "bashonly@protonmail.com"},
-    {name = "coletdjnz", email = "coletdjnz@protonmail.com"},
+    {name = "matczx", email = "245040149+matcxz@users.noreply.github.com"},
 ]
-description = "A feature-rich command-line audio/video downloader"
+description = "A feature-rich command-line audio/video downloader, fork of yt-dlp, fork of youtube-dlc, fork of youtube-dl."
 readme = "README.md"
 requires-python = ">=3.10"
 keywords = [
@@ -53,6 +50,7 @@ default = [
     "mutagen",
     "pycryptodomex",
     "requests>=2.32.2,<3",
+    "typer>=0.15,<1"
     "urllib3>=2.0.2,<3",
     "websockets>=13.0",
     "yt-dlp-ejs==0.8.0",
@@ -135,13 +133,12 @@ uv = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/yt-dlp/yt-dlp#readme"
-Repository = "https://github.com/yt-dlp/yt-dlp"
-Tracker = "https://github.com/yt-dlp/yt-dlp/issues"
-Funding = "https://github.com/yt-dlp/yt-dlp/blob/master/Maintainers.md#maintainers"
+Documentation = "https://github.com/matczx/tyt-dlp#readme"
+Repository = "https://github.com/matczx/tyt-dlp"
+Tracker = "https://github.com/matczx/tyt-dlp/issues"
 
 [project.scripts]
-yt-dlp = "yt_dlp:main"
+tyt-dlp = "yt_dlp:main"
 
 [project.entry-points.pyinstaller40]
 hook-dirs = "yt_dlp.__pyinstaller:get_hook_dirs"
@@ -199,7 +196,7 @@ installer = "uv"
 
 [tool.hatch.envs.default.scripts]
 setup = "pre-commit install --config .pre-commit-hatch.yaml"
-yt-dlp = "python -Werror -Xdev -m yt_dlp {args}"
+tyt-dlp = "python -Werror -Xdev -m yt_dlp {args}"
 
 [tool.hatch.envs.hatch-uv]
 dependencies = [
