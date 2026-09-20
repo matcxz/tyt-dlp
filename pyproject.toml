@@ -50,7 +50,7 @@ default = [
     "mutagen",
     "pycryptodomex",
     "requests>=2.32.2,<3",
-    "typer>=0.15,<1"
+    "typer>=0.15,<1",
     "urllib3>=2.0.2,<3",
     "websockets>=13.0",
     "yt-dlp-ejs==0.8.0",
@@ -112,7 +112,6 @@ test = [
     "pytest-rerunfailures~=16.0",
 ]
 dev = [
-    "pre-commit",
     {include-group = "static-analysis"},
     {include-group = "test"},
 ]
@@ -188,14 +187,10 @@ features = [
     "curl-cffi",
     "default",
 ]
-dependencies = [
-    "pre-commit",
-]
 path = ".venv"
 installer = "uv"
 
 [tool.hatch.envs.default.scripts]
-setup = "pre-commit install --config .pre-commit-hatch.yaml"
 tyt-dlp = "python -Werror -Xdev -m yt_dlp {args}"
 
 [tool.hatch.envs.hatch-uv]
